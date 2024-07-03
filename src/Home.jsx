@@ -43,7 +43,7 @@ function Home() {
             })
             .catch (err => {
                 if(err.response.status == 404) {
-                    setError("Invalid City Name")
+                    setError("Nombre de Ciudad Invalido")
                 }else{
                     setError('');
                 }
@@ -56,7 +56,7 @@ function Home() {
     <div className="container">
       <div className="weather">
         <div className="search">
-          <input type="text" placeholder="Enter City Name" onChange={e => setName(e.target.value) } />
+          <input type="text" placeholder="Ingrese el Nombre de la Ciudad" onChange={e => setName(e.target.value) } />
           <button>
             <img src="/Images/search.png" onClick={handleClick} alt="" /></button>
         </div>
@@ -72,14 +72,14 @@ function Home() {
               <img src="/Images/humidity.png" alt="" />
               <div className="humidity">
                 <p>{Math.round(data.humidity)}%</p>
-                <p>Humidity</p>
+                <p>Humedad</p>
               </div>
             </div>
             <div className="col">
-              <img src="/Images/mist.png" alt="" />
-              <div className="mist">
+              <img src="/Images/wind.png" alt="" />
+              <div className="wind">
                 <p>{Math.round(data.speed)} km/h</p>
-                <p>Wind</p>
+                <p>Viento</p>
               </div>
             </div>
           </div>
